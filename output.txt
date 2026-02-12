@@ -1,0 +1,37 @@
+Server running at http://localhost:3000
+
+Task 1: Login
+{
+    "message": "OTP sent",
+    "loginSessionId": "f9nfx"
+}
+POST /auth/login
+[OTP] Session f9nfx generated
+[OTP] Code for rohitgupta1938@gmail.com : 359542
+
+Task 2: OTP Verification
+POST /auth/verify-otp
+{
+    "message": "OTP verified",
+    "sessionId": "f9nfx"
+}
+
+Task 3: Token Generation
+POST /auth/token
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvaGl0Z3VwdGExOTM4QGdtYWlsLmNvbSIsInNlc3Npb25JZCI6ImY5bmZ4IiwiaWF0IjoxNzcwOTA1MDIzLCJleHAiOjE3NzA5MDU5MjN9.rKaDG7H51CbaExZOPC_0mrmLBVhBVXzDZun2-OAQoHg",
+    "expires_in": 900
+}
+
+Task 4: Protected Route Access
+GET /protected
+{
+    "message": "Access granted",
+    "user": {
+        "email": "rohitgupta1938@gmail.com",
+        "sessionId": "f9nfx",
+        "iat": 1770905023,
+        "exp": 1770905923
+    },
+    "success_flag": "FLAG-cm9oaXRndXB0YTE5MzhAZ21haWwuY29tX0NPTVBMRVRFRF9BU1NJR05NRU5U"
+}
